@@ -7,7 +7,7 @@ namespace Timers
     public abstract class Timer
     {
         #region Variables
-        private object caller = null;
+        public object caller = null;
         private IEnumerator coroutine;
         private float elapsedTime = 0.0f;
         private TimerManager timerManager = null;
@@ -37,9 +37,8 @@ namespace Timers
             this.timerManager = TimerManager.Instance;
         }
 
-        public void Start(object caller)
+        public void Start()
         {
-            this.caller = caller;
             if (!this.isRunning)
             {
                 this.stopped = false;
@@ -47,7 +46,7 @@ namespace Timers
                 this.timerManager.StartCoroutine(this.coroutine);
             }
         }
-
+        
         IEnumerator TimerMechanism()
         {
             this.isRunning = true;
