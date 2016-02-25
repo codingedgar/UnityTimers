@@ -17,9 +17,8 @@ namespace Timers
             }
         }
 
-        public SecondsTimer(float interval = 1.0f) : base ()
+        public SecondsTimer(float interval) : base(interval)
         {
-            this.Interval = interval;
         }
     }
 }

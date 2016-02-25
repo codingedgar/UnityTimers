@@ -32,9 +32,10 @@ namespace Timers
 
         #region Core
 
-        public Timer()
+        public Timer(float interval)
         {
             this.timerManager = TimerManager.Instance;
+            Interval = interval;
         }
 
         public void Start()

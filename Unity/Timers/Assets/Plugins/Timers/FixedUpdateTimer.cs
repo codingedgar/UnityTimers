@@ -7,7 +7,7 @@ namespace Timers
 
         protected override float TickTime { get { return Time.fixedDeltaTime; } }
 
-        public FixedUpdateTimer() : base()
+        public FixedUpdateTimer(float interval) : base(interval)
         {
             this.waitFor = new WaitForFixedUpdate();
         }
